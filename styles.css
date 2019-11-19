@@ -4,7 +4,7 @@
     --primary-color: #358E9A;
     --primary-highlight: #003540;
     --secondary-highlight: #E07224;
-    /* --primary-other: #55BF81; */
+    --primary-other: #324B4F;
     --secondary-white: #e4e4e4;
 }
 
@@ -117,6 +117,9 @@ ul {
     justify-content: center;
     align-items: center;
     background: var(--primary-background);
+    /* background: rgb(224,114,32); */
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, var(--primary-background) 30% 70%, var(--primary-other) 120%);
+
 }
 
 #landing-page-info {
@@ -135,6 +138,7 @@ ul {
 /* ..General.. */
 #about {
     padding: 7rem 2rem;
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, white 30%, white 70%, var(--primary-other) 130%);
 }
 
 #about hr {
@@ -322,6 +326,7 @@ ul {
 
 #projects {
     background: var(--primary-background);
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, var(--primary-background) 30%, var(--primary-background) 80%, var(--primary-other) 130%);
     padding: 7rem 2rem;
     text-align: center;
 }
@@ -359,6 +364,8 @@ ul {
     justify-content: center;
     align-items: center;
     background: var(--secondary-highlight);
+    /* background: rgb(224,114,32); */
+    background: linear-gradient(45deg, var(--secondary-highlight), var(--primary-color) 100%);
 }
 
 p.project-image {
@@ -404,6 +411,7 @@ p.project-image {
 /*..........Contact Section.................*/
 #contact {
     background: white;
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, white 30% 70%, var(--primary-highlight) 120%);
     height: 80vh;
     display: flex;
     align-items: center;
@@ -468,6 +476,7 @@ footer{
     font-size: 1.6rem;
     padding: 2rem;
     border-top: 5px solid var(--primary-highlight);
+    background: var(--secondary-background);
 }
 
 footer div {
