@@ -225,6 +225,7 @@ ul {
     background: var(--secondary-white);
     border-radius: 50%;
     position: relative;
+    z-index: 0;
 }
 
 .image-lineup {
@@ -240,11 +241,6 @@ ul {
 }
 
 #career-images {
-    position: relative;
-}
-
-#career-images .image-window {
-    position: relative;
     top: -35px;
     left: -50px;
     animation: 20s linear 0s infinite normal none running careerWindow;
@@ -256,17 +252,12 @@ ul {
     animation: 20s linear 0s infinite normal none running careerLineup;
 }
 
-#interests-images {
-    position: relative;
-}
-
 #interests-images .image-lineup {
-    overflow: hidden;
+    /*overflow: hidden;*/
     animation: 20s linear 0s infinite normal none running interestsLineup;
 }
 
 #coding-images .image-lineup {
-    overflow: hidden;
     animation: 20s linear 0s infinite normal none running codingLineup;
 }
 
@@ -284,7 +275,7 @@ ul {
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     display: inline-flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .btn {
@@ -319,7 +310,7 @@ ul {
         margin: 0 0 0 20px;
         order: 2;
     }
-    
+
     #about .about-subsection:nth-of-type(2n) .image-container {
         margin: 0 20px 0 0;
     }
