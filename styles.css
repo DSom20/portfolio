@@ -143,7 +143,6 @@ ul {
 /* ..General.. */
 #about {
     padding: 7rem 2rem;
-    text-align: left;
 }
 
 #about hr {
@@ -168,12 +167,10 @@ ul {
 
 /*..Subsections..*/
 .about-subsection {
+    display: block;
+    text-align: center;
     padding: 4rem 0;
-    display: flex;
-    flex-flow: row nowrap;
     position: relative;
-    align-items: center;
-    justify-content: space-around;
 }
 
 /*..Text Section and Image Sections..*/
@@ -205,16 +202,12 @@ ul {
     max-width: 350px;
     flex: 1 0 250px;
     background-color: var(--primary-background);
+    margin: 0 auto 20px auto;
 }
 
-.about-subsection:nth-of-type(2n+1) .image-container {
-    margin-left: 20px;
-    order: 2;
-}
-
-.about-subsection:nth-of-type(2n) .image-container {
-    margin-right: 20px;
-}
+/* #about .image-container {
+    margin: 0 auto 20px auto;
+} */
 
 .window-frame-1 {
     position: absolute;
@@ -321,14 +314,22 @@ ul {
     transition: all .3s ease-out;
 }
 
-@media (max-width: 731px) {
+@media (min-width: 732px) {
     .about-subsection {
-        display: block;
-        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        text-align: left;
     }
 
-    #about .image-container {
-        margin: 0 auto 20px auto;
+    #about .about-subsection:nth-of-type(2n+1) .image-container {
+        margin: 0 0 0 20px;
+        order: 2;
+    }
+    
+    #about .about-subsection:nth-of-type(2n) .image-container {
+        margin: 0 20px 0 0;
     }
 }
 
