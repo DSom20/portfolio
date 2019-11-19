@@ -224,6 +224,7 @@ ul {
     overflow: hidden;
     background: var(--secondary-white);
     border-radius: 50%;
+    position: relative;
 }
 
 .image-lineup {
