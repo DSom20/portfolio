@@ -4,17 +4,12 @@
     --primary-color: #358E9A;
     --primary-highlight: #003540;
     --secondary-highlight: #E07224;
-    --primary-other: #55BF81;
+    /* --primary-other: #55BF81; */
     --secondary-white: #e4e4e4;
-
-
-
-
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    margin-top: 0;
     margin: 0;
     padding: 0;
 }
@@ -22,11 +17,9 @@
 html {
     font-size: 10px;
     font-family: Arial, sans-serif;
-    margin: 0;
 }
 
 body {
-    margin: 0;
     font-size: 2.0rem;
     line-height: 1.4;
     color: var(--primary-color);
@@ -71,7 +64,6 @@ ul {
 
 
 #navbar ul {
-    /* margin-right: 2rem; */
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -165,18 +157,17 @@ ul {
     margin: 0 auto;
 }
 
-/*..Subsections..*/
+/*..Text Section and Image Subsections..*/
+#about-content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .about-subsection {
     display: block;
     text-align: center;
     padding: 4rem 0;
     position: relative;
-}
-
-/*..Text Section and Image Sections..*/
-#about-content-container {
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 /*..Text Only..*/
@@ -187,8 +178,6 @@ ul {
 .about-text li, .about-text p {
     padding-bottom: 1.6rem;
 }
-
-
 
 /*..Image Section..*/
 
@@ -204,10 +193,6 @@ ul {
     background-color: var(--primary-background);
     margin: 0 auto 20px auto;
 }
-
-/* #about .image-container {
-    margin: 0 auto 20px auto;
-} */
 
 .window-frame-1 {
     position: absolute;
@@ -379,6 +364,7 @@ ul {
 p.project-image {
     font-size: 3rem;
 }
+
 .project-title {
     background: var(--primary-highlight);
     padding: 2rem;
@@ -405,6 +391,8 @@ p.project-image {
     color: var(--secondary-highlight);
     transition: color 1s ease-out;
 }
+
+/* ..Button.. --> see resume button section */
 
 @media (min-width: 732px) {
     .project-tile {
@@ -472,8 +460,6 @@ p.project-image {
     transition: all .3s ease-out;
 }
 
-
-
 /*..........Footer.................*/
 footer{
     display: flex;
@@ -521,8 +507,6 @@ footer div {
         transform: translateY(-840px);
     }
 }
-
-
 
 @keyframes careerLineup {
     /* To Uni */
@@ -581,7 +565,6 @@ footer div {
     47.6%, 90% {
         transform: translate(100px, 30px);
     }
-
 }
 
 @keyframes interestsLineup {
@@ -600,7 +583,6 @@ footer div {
     80%, 95% {
         transform: translateY(-480px);
     }
-
     100% {
         transform: translateY(-600px);
     }
