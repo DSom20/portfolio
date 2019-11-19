@@ -84,10 +84,14 @@ ul {
 
 }
 
-.navlink a:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
+@media (hover: hover) {
+    .navlink a:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+    }
 }
+
+
 
 @media (min-width: 530px) {
     #navbar {
@@ -107,6 +111,12 @@ ul {
     .navlink a {
         padding: 2rem;
     }
+}
+
+/*...............................MAIN......................................*/
+
+main > section {
+    padding: 7rem 2rem;
 }
 
 /*..........Welcome Section.................*/
@@ -137,7 +147,6 @@ ul {
 
 /* ..General.. */
 #about {
-    padding: 7rem 2rem;
     background: linear-gradient(30deg, var(--secondary-highlight) 0%, white 30%, white 70%, var(--primary-other) 130%);
 }
 
@@ -287,14 +296,16 @@ ul {
     transition: transform .3s ease-out;
 }
 
-.btn:hover .btn-icon {
-    transform: translateX(5px);
-}
+@media (hover: hover) {
+    .btn:hover .btn-icon {
+        transform: translateX(5px);
+    }
 
-.btn:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
-    transition: all .3s ease-out;
+    .btn:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+        transition: all .3s ease-out;
+    }
 }
 
 @media (min-width: 732px) {
@@ -321,7 +332,6 @@ ul {
 #projects {
     background: var(--primary-background);
     background: linear-gradient(30deg, var(--secondary-highlight) 0%, var(--primary-background) 30%, var(--primary-background) 80%, var(--primary-other) 130%);
-    padding: 7rem 2rem;
     text-align: center;
 }
 
@@ -373,24 +383,21 @@ p.project-image {
     width: 100%;
 }
 
-.project-tile:hover .code {
-    color: var(--secondary-highlight);
-    transition: color 1s ease-out;
-}
-
 .project-title::before {
     content: "<";
-    color: var(--main-gray);
+    color: var(--primary-highlight);
 }
 
 .project-title::after {
     content: "/>";
-    color: var(--main-gray);
+    color: var(--primary-highlight);
 }
 
-.project-tile:hover .project-title::before, .project-tile:hover .project-title::after {
-    color: var(--secondary-highlight);
-    transition: color 1s ease-out;
+@media (hover: hover) {
+    .project-tile:hover .project-title::before, .project-tile:hover .project-title::after {
+        color: var(--secondary-highlight);
+        transition: color 1s ease-out;
+    }
 }
 
 /* ..Button.. --> see resume button section */
@@ -455,11 +462,13 @@ p.project-image {
     height: 2.5rem;
 }
 
-#contact-links a:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
-    transform: translateY(8px);
-    transition: all .3s ease-out;
+@media (hover: hover) {
+    #contact-links a:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+        transform: translateY(8px);
+        transition: all .3s ease-out;
+    }
 }
 
 /*..........Footer.................*/
