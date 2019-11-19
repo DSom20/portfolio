@@ -1,0 +1,606 @@
+:root {
+    --primary-background: #c5ded7;
+    --secondary-background: #9EF2FF;
+    --primary-color: #358E9A;
+    --primary-highlight: #003540;
+    --secondary-highlight: #E07224;
+    --primary-other: #55BF81;
+    --secondary-white: #e4e4e4;
+
+
+
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-size: 2.0rem;
+    line-height: 1.4;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--primary-color);
+}
+
+p, li {
+    font-size: 1.6rem;
+    color: black;
+}
+
+ul {
+    list-style: disc inside;
+}
+
+/*..........Nav Bar.................*/
+
+#navbar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    align-items: center;
+    background: var(--secondary-background);
+    border-bottom: 2px solid black;
+}
+
+
+
+#navbar ul {
+    /* margin-right: 2rem; */
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.navlink {
+    font-size: 1.6rem;
+    font-weight: bold;
+
+}
+
+.navlink a {
+    display: block;
+    padding: 2rem 0;
+
+}
+
+.navlink a:hover {
+    background: var(--secondary-highlight);
+    color: var(--primary-highlight);
+}
+
+@media (min-width: 530px) {
+    #navbar {
+        justify-content: flex-end;
+        flex-flow: row nowrap;
+    }
+    #navbar ul {
+        justify-content: flex-end;
+        margin-right: 2rem;
+        width: auto;
+    }
+
+    .navlink {
+        font-size: 2.2rem;
+    }
+
+    .navlink a {
+        padding: 2rem;
+    }
+}
+
+/*..........Welcome Section.................*/
+
+#landing-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-background);
+}
+
+#landing-page-info {
+    text-align: center;
+}
+
+#landing-page-info p {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+
+/* .........About Me Section................ */
+
+/* ..General.. */
+#about {
+    padding: 7rem 2rem;
+    text-align: left;
+}
+
+#about hr {
+    border: none;
+    border-bottom: 5px dotted var(--secondary-white);
+    width: 20%;
+    margin: 0 auto;
+}
+
+.about-text a {
+    text-decoration: underline;
+}
+
+/*..Header..*/
+#about h2 {
+    text-align: center;
+    font-size: 4rem;
+    border-bottom: 2px solid var(--secondary-white);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/*..Subsections..*/
+.about-subsection {
+    padding: 4rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*..Text Section and Image Sections..*/
+#about-content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*..Text Only..*/
+.about-text h3 {
+    padding-bottom: 2.5rem;
+}
+
+.about-text li, .about-text p {
+    padding-bottom: 1.6rem;
+}
+
+
+
+/*..Image Section..*/
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 200px;
+    min-width: 250px;
+    max-width: 350px;
+    flex: 1 0 250px;
+    background-color: var(--primary-background);
+}
+
+.about-subsection:nth-of-type(2n+1) .image-container {
+    margin-left: 20px;
+    order: 2;
+}
+
+.about-subsection:nth-of-type(2n) .image-container {
+    margin-right: 20px;
+}
+
+.window-frame-1 {
+    position: absolute;
+    height: 50%;
+    width: 20%;
+    top: 0;
+    right: 0;
+    border-top: 5px solid var(--primary-highlight);
+    border-right: 5px solid var(--primary-highlight);
+}
+
+.window-frame-2 {
+    position: absolute;
+    height: 50%;
+    width: 20%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid var(--primary-highlight);
+    border-left: 5px solid var(--primary-highlight);
+}
+
+.image-window {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background: var(--secondary-white);
+    border-radius: 50%;
+}
+
+.image-lineup {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.icon {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+}
+
+#career-images {
+    position: relative;
+}
+
+#career-images .image-window {
+    position: relative;
+    top: -35px;
+    left: -50px;
+    animation: 20s linear 0s infinite normal none running careerWindow;
+}
+
+#career-images .image-lineup {
+    display: flex;
+    flex-flow: row nowrap;
+    animation: 20s linear 0s infinite normal none running careerLineup;
+}
+
+#interests-images {
+    position: relative;
+}
+
+#interests-images .image-lineup {
+    animation: 20s linear 0s infinite normal none running interestsLineup;
+}
+
+#coding-images .image-lineup {
+    animation: 20s linear 0s infinite normal none running codingLineup;
+}
+
+/* .. Animations: see bottom of stylesheet .. */
+
+/*..Resume Button..*/
+#resume {
+    padding: 4rem 0 0 0;
+    text-align: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.btn {
+    background: var(--primary-highlight);
+}
+
+.btn-icon {
+    vertical-align: middle;
+    transition: transform .3s ease-out;
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.btn:hover {
+    background: var(--secondary-highlight);
+    color: var(--primary-highlight);
+    transition: all .3s ease-out;
+}
+
+@media (max-width: 731px) {
+    .about-subsection {
+        display: block;
+        text-align: center;
+    }
+
+    #about .image-container {
+        margin: 0 auto 20px auto;
+    }
+}
+
+/*..........Project Section.................*/
+
+#projects {
+    background: var(--primary-background);
+    padding: 7rem 2rem;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 4rem;
+    border-bottom: 2px solid var(--secondary-white);
+    max-width: 200px;
+    margin: 0 auto 7rem auto;
+}
+
+#project-tile-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.project-tile {
+    flex: 1 400px;
+    height: 450px;
+    margin-bottom: 4rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.project-image {
+    display: block;
+    width: 100%;
+    height: calc(100% - 6.8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-highlight);
+}
+
+p.project-image {
+    font-size: 3rem;
+}
+.project-title {
+    background: var(--primary-highlight);
+    padding: 2rem;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.project-tile:hover .code {
+    color: var(--secondary-highlight);
+    transition: color 1s ease-out;
+}
+
+.project-title::before {
+    content: "<";
+    color: var(--main-gray);
+}
+
+.project-title::after {
+    content: "/>";
+    color: var(--main-gray);
+}
+
+.project-tile:hover .project-title::before, .project-tile:hover .project-title::after {
+    color: var(--secondary-highlight);
+    transition: color 1s ease-out;
+}
+
+@media (min-width: 732px) {
+    .project-tile {
+        flex-grow: 0;
+        margin: 0 2rem 4rem 2rem;
+    }
+}
+
+/*..........Contact Section.................*/
+#contact {
+    background: white;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+#contact h2 {
+    font-size: 5.5rem;
+}
+
+#contact p {
+    color: var(--primary-color);
+}
+
+#contact-title p {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.contact-box {
+    /*Was having trouble with width and centering. Key is set WIDTH to 100%, then within those bounds set smaller max-width. NEED to set width first...*/
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+    padding-bottom: 6rem;
+}
+
+#contact-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#contact-links a {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-highlight);
+    margin: 1rem;
+}
+
+#contact-links a img {
+    height: 2.5rem;
+}
+
+#contact-links a:hover {
+    background: var(--secondary-highlight);
+    color: var(--primary-highlight);
+    transform: translateY(8px);
+    transition: all .3s ease-out;
+}
+
+
+
+/*..........Footer.................*/
+footer{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 300;
+    font-size: 1.6rem;
+    padding: 2rem;
+    border-top: 5px solid var(--primary-highlight);
+}
+
+footer div {
+    margin: 2rem 3rem;
+}
+
+#footer-copyright {
+    margin-left: auto;
+    min-width: 103px;
+}
+
+/* ....... Animations ............ */
+
+@keyframes codingLineup {
+    0%, 10% {
+        transform: translateY(0px);
+    }
+    15%, 25% {
+        transform: translateY(-120px);
+    }
+    30%, 40% {
+        transform: translateY(-240px);
+    }
+    45%, 55% {
+        transform: translateY(-360px);
+    }
+    60%, 70% {
+        transform: translateY(-480px);
+    }
+    75%, 80% {
+        transform: translateY(-600px);
+    }
+    85%, 95% {
+        transform: translateY(-720px);
+    }
+    100% {
+        transform: translateY(-840px);
+    }
+}
+
+
+
+@keyframes careerLineup {
+    /* To Uni */
+    0% {
+        transform: translate(0px, 0px);
+    }
+    5%, 10% {
+        transform: translateX(-120px);
+    }
+    15%, 20% {
+        transform: translateX(-240px);
+    }
+    /* To Filler */
+    25% {
+        transform: translate(-360px, -100px);
+    }
+    /* Still Filler, But adjust vertical back to baseline invisibly */
+    25.1% {
+        transform: translate(-360px, 0px)
+    }
+    /* To EMT */
+    27.5%, 32.5% {
+        transform: translateX(-480px);
+    }
+    37.5%, 42.5% {
+        transform: translateX(-600px);
+    }
+    /* To Filler */
+    47.5% {
+        transform: translate(-720px,75px);
+    }
+    /* Still Filler, But adjust vertical back to baseline invisibly */
+    47.6% {
+        transform: translate(-720px, 0px);
+    }
+    /* To Code */
+    50%, 90% {
+        transform: translateX(-840px);
+    }
+    /* To Filler */
+    98% {
+        transform: translate(-720px, 35px);
+    }
+    100% {
+        transform: translate(-720px, 0px);
+    }
+}
+
+@keyframes careerWindow {
+    0%, 20%, 100% {
+        transform: translate(0px, 0px);
+    }
+    24.1%, 42.5% {
+        transform: translate(50px,60px);
+    }
+    47.6%, 90% {
+        transform: translate(100px, 30px);
+    }
+
+}
+
+@keyframes interestsLineup {
+    0%, 15% {
+        transform: translateY(0px);
+    }
+    20%, 35% {
+        transform: translateY(-120px);
+    }
+    40%, 55% {
+        transform: translateY(-240px);
+    }
+    60%, 75% {
+        transform: translateY(-360px);
+    }
+    80%, 95% {
+        transform: translateY(-480px);
+    }
+
+    100% {
+        transform: translateY(-600px);
+    }
+}
