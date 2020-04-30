@@ -7,4 +7,4 @@ Html and CSS
 
 ## How to use
 Plain HTML/CSS, so just clone or download and have at it!
-See live version at ...
+See live version at https://dsom20.github.io/portfolio/
