@@ -4,17 +4,12 @@
     --primary-color: #358E9A;
     --primary-highlight: #003540;
     --secondary-highlight: #E07224;
-    --primary-other: #55BF81;
+    --primary-other: #324B4F;
     --secondary-white: #e4e4e4;
-
-
-
-
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    margin-top: 0;
     margin: 0;
     padding: 0;
 }
@@ -22,11 +17,9 @@
 html {
     font-size: 10px;
     font-family: Arial, sans-serif;
-    margin: 0;
 }
 
 body {
-    margin: 0;
     font-size: 2.0rem;
     line-height: 1.4;
     color: var(--primary-color);
@@ -71,7 +64,6 @@ ul {
 
 
 #navbar ul {
-    /* margin-right: 2rem; */
     list-style-type: none;
     display: flex;
     flex-flow: row wrap;
@@ -92,10 +84,14 @@ ul {
 
 }
 
-.navlink a:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
+@media (hover: hover) {
+    .navlink a:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+    }
 }
+
+
 
 @media (min-width: 530px) {
     #navbar {
@@ -117,6 +113,12 @@ ul {
     }
 }
 
+/*...............................MAIN......................................*/
+
+main > section {
+    padding: 7rem 2rem;
+}
+
 /*..........Welcome Section.................*/
 
 #landing-page{
@@ -125,6 +127,9 @@ ul {
     justify-content: center;
     align-items: center;
     background: var(--primary-background);
+    /* background: rgb(224,114,32); */
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, var(--primary-background) 30% 70%, var(--primary-other) 120%);
+
 }
 
 #landing-page-info {
@@ -142,8 +147,7 @@ ul {
 
 /* ..General.. */
 #about {
-    padding: 7rem 2rem;
-    text-align: left;
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, white 30%, white 70%, var(--primary-other) 130%);
 }
 
 #about hr {
@@ -166,20 +170,17 @@ ul {
     margin: 0 auto;
 }
 
-/*..Subsections..*/
-.about-subsection {
-    padding: 4rem 0;
-    display: flex;
-    flex-flow: row nowrap;
-    position: relative;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/*..Text Section and Image Sections..*/
+/*..Text Section and Image Subsections..*/
 #about-content-container {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.about-subsection {
+    display: block;
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
 }
 
 /*..Text Only..*/
@@ -190,8 +191,6 @@ ul {
 .about-text li, .about-text p {
     padding-bottom: 1.6rem;
 }
-
-
 
 /*..Image Section..*/
 
@@ -205,15 +204,7 @@ ul {
     max-width: 350px;
     flex: 1 0 250px;
     background-color: var(--primary-background);
-}
-
-.about-subsection:nth-of-type(2n+1) .image-container {
-    margin-left: 20px;
-    order: 2;
-}
-
-.about-subsection:nth-of-type(2n) .image-container {
-    margin-right: 20px;
+    margin: 0 auto 20px auto;
 }
 
 .window-frame-1 {
@@ -242,6 +233,8 @@ ul {
     overflow: hidden;
     background: var(--secondary-white);
     border-radius: 50%;
+    position: relative;
+    z-index: 0;
 }
 
 .image-lineup {
@@ -257,11 +250,6 @@ ul {
 }
 
 #career-images {
-    position: relative;
-}
-
-#career-images .image-window {
-    position: relative;
     top: -35px;
     left: -50px;
     animation: 20s linear 0s infinite normal none running careerWindow;
@@ -273,11 +261,8 @@ ul {
     animation: 20s linear 0s infinite normal none running careerLineup;
 }
 
-#interests-images {
-    position: relative;
-}
-
 #interests-images .image-lineup {
+    /*overflow: hidden;*/
     animation: 20s linear 0s infinite normal none running interestsLineup;
 }
 
@@ -299,7 +284,7 @@ ul {
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     display: inline-flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .btn {
@@ -311,24 +296,34 @@ ul {
     transition: transform .3s ease-out;
 }
 
-.btn:hover .btn-icon {
-    transform: translateX(5px);
-}
-
-.btn:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
-    transition: all .3s ease-out;
-}
-
-@media (max-width: 731px) {
-    .about-subsection {
-        display: block;
-        text-align: center;
+@media (hover: hover) {
+    .btn:hover .btn-icon {
+        transform: translateX(5px);
     }
 
-    #about .image-container {
-        margin: 0 auto 20px auto;
+    .btn:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+        transition: all .3s ease-out;
+    }
+}
+
+@media (min-width: 732px) {
+    .about-subsection {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    #about .about-subsection:nth-of-type(2n+1) .image-container {
+        margin: 0 0 0 20px;
+        order: 2;
+    }
+
+    #about .about-subsection:nth-of-type(2n) .image-container {
+        margin: 0 20px 0 0;
     }
 }
 
@@ -336,7 +331,7 @@ ul {
 
 #projects {
     background: var(--primary-background);
-    padding: 7rem 2rem;
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, var(--primary-background) 30%, var(--primary-background) 80%, var(--primary-other) 130%);
     text-align: center;
 }
 
@@ -373,11 +368,14 @@ ul {
     justify-content: center;
     align-items: center;
     background: var(--secondary-highlight);
+    /* background: rgb(224,114,32); */
+    background: linear-gradient(45deg, var(--secondary-highlight), var(--primary-color) 100%);
 }
 
 p.project-image {
     font-size: 3rem;
 }
+
 .project-title {
     background: var(--primary-highlight);
     padding: 2rem;
@@ -385,25 +383,24 @@ p.project-image {
     width: 100%;
 }
 
-.project-tile:hover .code {
-    color: var(--secondary-highlight);
-    transition: color 1s ease-out;
-}
-
 .project-title::before {
     content: "<";
-    color: var(--main-gray);
+    color: var(--primary-highlight);
 }
 
 .project-title::after {
     content: "/>";
-    color: var(--main-gray);
+    color: var(--primary-highlight);
 }
 
-.project-tile:hover .project-title::before, .project-tile:hover .project-title::after {
-    color: var(--secondary-highlight);
-    transition: color 1s ease-out;
+@media (hover: hover) {
+    .project-tile:hover .project-title::before, .project-tile:hover .project-title::after {
+        color: var(--secondary-highlight);
+        transition: color 1s ease-out;
+    }
 }
+
+/* ..Button.. --> see resume button section */
 
 @media (min-width: 732px) {
     .project-tile {
@@ -415,6 +412,7 @@ p.project-image {
 /*..........Contact Section.................*/
 #contact {
     background: white;
+    background: linear-gradient(30deg, var(--secondary-highlight) 0%, white 30% 70%, var(--primary-highlight) 120%);
     height: 80vh;
     display: flex;
     align-items: center;
@@ -464,14 +462,14 @@ p.project-image {
     height: 2.5rem;
 }
 
-#contact-links a:hover {
-    background: var(--secondary-highlight);
-    color: var(--primary-highlight);
-    transform: translateY(8px);
-    transition: all .3s ease-out;
+@media (hover: hover) {
+    #contact-links a:hover {
+        background: var(--secondary-highlight);
+        color: var(--primary-highlight);
+        transform: translateY(8px);
+        transition: all .3s ease-out;
+    }
 }
-
-
 
 /*..........Footer.................*/
 footer{
@@ -481,6 +479,7 @@ footer{
     font-size: 1.6rem;
     padding: 2rem;
     border-top: 5px solid var(--primary-highlight);
+    background: var(--secondary-background);
 }
 
 footer div {
@@ -520,8 +519,6 @@ footer div {
         transform: translateY(-840px);
     }
 }
-
-
 
 @keyframes careerLineup {
     /* To Uni */
@@ -580,7 +577,6 @@ footer div {
     47.6%, 90% {
         transform: translate(100px, 30px);
     }
-
 }
 
 @keyframes interestsLineup {
@@ -599,7 +595,6 @@ footer div {
     80%, 95% {
         transform: translateY(-480px);
     }
-
     100% {
         transform: translateY(-600px);
     }
