@@ -6,5 +6,5 @@ I am in the process of making a new portfolio site in React.
 Html and CSS
 
 ## How to use
-Plain HTML/CSS, so just clone or download and have at it!
-See live version at https://dsom20.github.io/portfolio/
+Plain HTML/CSS, so just fork or download and have at it!
+See live version of gh-pages branch at https://dsom20.github.io/portfolio/
